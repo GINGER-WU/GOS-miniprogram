@@ -1,0 +1,39 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/parts/parts",
+    "pages/consult/consult",
+    "pages/profile/profile"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#0094ff",
+    "navigationBarTitleText": "gos",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页档案",
+      "iconPath": "/static/icons/index_0.png",
+      "selectedIconPath": "/static/icons/index_1.png"
+    }, {
+      "pagePath": "pages/parts/parts",
+      "text": "配件商城",
+      "iconPath": "/static/icons/cube_0.png",
+      "selectedIconPath": "/static/icons/cube_1.png"
+    },{
+      "pagePath": "pages/consult/consult",
+      "text": "价钱咨询",
+      "iconPath": "/static/icons/consult_0.png",
+      "selectedIconPath": "/static/icons/consult_1.png"
+    },{
+      "pagePath": "pages/profile/profile",
+      "text": "我的",
+      "iconPath": "/static/icons/profile_0.png",
+      "selectedIconPath": "/static/icons/profile_1.png"
+    }],
+    "color": "#808080"
+  },
+  "sitemapLocation": "sitemap.json"
+}
