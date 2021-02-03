@@ -2,28 +2,31 @@
   <i-col span="24" i-class="col-class">
     <view class="table">
       <view class="tr bg-w">
-      <view class="th">档案号</view>
-      <view class="th">车牌号</view>
-      <view class="th ">操作</view>
+        <view class="th">档案号</view>
+        <view class="th">车牌号</view>
+        <view class="th ">操作</view>
       </view>
       <block wx:for="{{carfiles}}" wx:key="carfileID">
-      <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
-      <view class="td">{{item.carfileID}}</view>
-      <view class="td">{{item.carNumber}}</view>
-      <view class="td">
-        <button plain="true" bindtap="handleClick" data-ID="{{item.carfileID}}" type="primary" size="mini">详情</button>
-      </view>
-      </view>
-      <view class="tr" wx:else>
-        <view class="td">{{item.carfileID}}</view>
-        <view class="td">{{item.carNumber}}</view>
-        <view class="td">
-          <button plain="true" bindtap="handleClick" data-ID="{{item.carfileID}}" type="primary" size="mini">详情</button>
+        <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+          <view class="td">{{item.carfileID}}</view>
+          <view class="td">{{item.carNumber}}</view>
+          <view class="td">
+            <button plain="true" bindtap="handleClick" data-ID="{{item.carfileID}}" type="primary"
+              size="mini">详情</button>
+          </view>
         </view>
-      </view>
+        <view class="tr" wx:else>
+          <view class="td">{{item.carfileID}}</view>
+          <view class="td">{{item.carNumber}}</view>
+          <view class="td">
+            <button plain="true" bindtap="handleClick" data-ID="{{item.carfileID}}" type="primary"
+              size="mini">详情</button>
+          </view>
+        </view>
       </block>
-     </view>
-     <i-modal style="height: 100%;" title="档案编号：{{carfileInfo.carfileID}}" show-cancel="{{false}}" visible="{{ isshow }}" bind:ok="handleOK">
+    </view>
+    <i-modal style="height: 100%;" title="档案编号：{{carfileInfo.carfileID}}" show-cancel="{{false}}" visible="{{ isshow }}"
+      bind:ok="handleOK">
       <i-row>
         <i-col span="12" i-class="col-class">
           <text class="strongText">车辆号:</text>
@@ -100,71 +103,77 @@
       </i-row>
       <i-row>
         <i-col span="24" i-class="col-class">
-      <view class="table">
-        <view class="tr bg-w">
-        <view class="th">工号</view>
-        <view class="th">姓名</view>
-        </view>
-        <block wx:for="{{carfileWorkers}}" wx:key="workerID">
-        <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
-        <view class="td">{{item.workerID}}</view>
-        <view class="td">{{item.workerName}}</view>
-        </view>
-        <view class="tr" wx:else>
-          <view class="td">{{item.workerID}}</view>
-          <view class="td">{{item.workerName}}</view>
-        </view>
-        </block>
-       </view>
-      </i-col>
-    </i-row>
-    <i-row>
-      <i-col span="24" i-class="col-class">
-        <view class="line"></view>
-      </i-col>
-    </i-row>
-    <i-row>
-      <i-col span="24" i-class="col-class">
-    <view class="table">
-      <view class="tr bg-w">
-      <view class="th">配件编号</view>
-      <view class="th">配件名称</view>
-      <view class="th">配件单价</view>
-      <view class="th">使用数量</view>
-      </view>
-      <block wx:for="{{carfileParts}}" wx:key="partsID">
-      <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
-      <view class="td">{{item.partsID}}</view>
-      <view class="td">{{item.partsName}}</view>
-      <view class="td">{{item.partsPrice}}</view>
-      <view class="td">{{item.useNumber}}</view>
-      </view>
-      <view class="tr" wx:else>
-        <view class="td">{{item.partsID}}</view>
-        <view class="td">{{item.partsName}}</view>
-        <view class="td">{{item.partsPrice}}</view>
-        <view class="td">{{item.useNumber}}</view>
-      </view>
-      </block>
-     </view>
-    </i-col>
-  </i-row>
-  <i-row>
-    <i-col span="24" i-class="col-class">
-      <view class="line"></view>
-    </i-col>
-  </i-row>
-  <i-row>
-    <i-col span="12" i-class="col-class">
-      <view wx:if="{{carfileInfo.finishService!=null}}">出厂时间：{{carfileInfo.finishService}}</view>
-      <view wx:else>未结账</view>
-    </i-col>
-  </i-row>
-  <i-row>
-    <i-col offset="12" span="12" i-class="col-class">
-      <view class="strongText">总费用：{{carfileInfo.totalCost}}元</view>
-    </i-col>
-  </i-row>
-  </i-modal>
+          <view class="table">
+            <view class="tr bg-w">
+              <view class="th">工号</view>
+              <view class="th">姓名</view>
+            </view>
+            <block wx:for="{{carfileWorkers}}" wx:key="workerID">
+              <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+                <view class="td">{{item.workerID}}</view>
+                <view class="td">{{item.workerName}}</view>
+              </view>
+              <view class="tr" wx:else>
+                <view class="td">{{item.workerID}}</view>
+                <view class="td">{{item.workerName}}</view>
+              </view>
+            </block>
+          </view>
+        </i-col>
+      </i-row>
+      <i-row>
+        <i-col span="24" i-class="col-class">
+          <view class="line"></view>
+        </i-col>
+      </i-row>
+      <i-row>
+        <i-col span="24" i-class="col-class">
+          <view class="table">
+            <view class="tr bg-w">
+              <view class="th">配件编号</view>
+              <view class="th">配件名称</view>
+              <view class="th">配件单价</view>
+              <view class="th">使用数量</view>
+            </view>
+            <block wx:for="{{carfileParts}}" wx:key="partsID">
+              <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+                <view class="td">{{item.partsID}}</view>
+                <view class="td">{{item.partsName}}</view>
+                <view class="td">{{item.partsPrice}}</view>
+                <view class="td">{{item.useNumber}}</view>
+              </view>
+              <view class="tr" wx:else>
+                <view class="td">{{item.partsID}}</view>
+                <view class="td">{{item.partsName}}</view>
+                <view class="td">{{item.partsPrice}}</view>
+                <view class="td">{{item.useNumber}}</view>
+              </view>
+            </block>
+          </view>
+        </i-col>
+      </i-row>
+      <i-row>
+        <i-col span="24" i-class="col-class">
+          <view class="line"></view>
+        </i-col>
+      </i-row>
+      <i-row>
+        <i-col span="12" i-class="col-class">
+          <view wx:if="{{carfileInfo.finishService!=null}}">出厂时间：{{carfileInfo.finishService}}</view>
+          <view wx:else>未结账</view>
+        </i-col>
+      </i-row>
+      <i-row>
+        <i-col offset="12" span="12" i-class="col-class">
+          <view class="strongText">总费用：{{carfileInfo.totalCost}}元</view>
+        </i-col>
+      </i-row>
+    </i-modal>
   </i-col>
+  <view class="page" >
+    <i-page current="{{ current }}" total="{{total}}" bind:change="handleChange">
+      <view slot="prev"><i-icon type="return" /></view>
+      <view slot="next"><i-icon type="enter" /></view>
+    </i-page>  
+  </view>
 </i-row>

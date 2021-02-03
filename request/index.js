@@ -1,14 +1,16 @@
 //首页请求
 const app = getApp()
 
-export function getCarfiles(page){
+export function getCarfiles(page,phoneNumber){
   return app.request({
-    url:app.baseURL+"/carfiles/selectcarfiles",
+    url:app.baseURL+"/client/selectcarfiles4client",
     data:{
-      page
+      page,
+      phoneNumber
     }
   })
 }
+
 
 export function getCarfilesInfo(carfileID){
   return app.request({

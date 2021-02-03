@@ -3,19 +3,24 @@
 import * as Handle_carfiles from '../../request/index.js'
 Page({
   data: {
+    phoneNumber:"1382123965",
     carfiles:[],
     isshow:false,
     carfileInfo:{},
     carfileWorkers:[],
-    carfileParts:[]
+    carfileParts:[],
+    current:1,
+    total:0
   },
   // 事件处理函数
   bindViewTap() {
   },
   onLoad() {
-    Handle_carfiles.getCarfiles(1).then(res=>{
+    Handle_carfiles.getCarfiles(this.data.current,this.data.phoneNumber).then(res=>{
       this.setData({
-        carfiles:res.data.data.list
+        carfiles:res.data.data.list,
+        current:res.data.data.pageNum,
+        total:res.data.data.pages
       })
     }).catch(err =>{
       console.log(err);
@@ -48,6 +53,32 @@ Page({
     }).catch(err =>{
       console.log(err);
     })
+  },
+  handleChange(even){
+    if(even.detail.type === "next"){
+      this.setData({
+        current: this.data.current+1 ,
+      })
+      Handle_carfiles.getCarfiles(this.data.current,this.data.phoneNumber).then(res=>{
+        this.setData({
+          carfiles:res.data.data.list,
+        })
+      }).catch(err =>{
+        console.log(err);
+      })
+    }
+    if(even.detail.type === "prev"){
+      this.setData({
+        current: this.data.current-1 ,
+      })
+      Handle_carfiles.getCarfiles(this.data.current,this.data.phoneNumber).then(res=>{
+        this.setData({
+          carfiles:res.data.data.list,
+        })
+      }).catch(err =>{
+        console.log(err);
+      })
+    }
   },
   handleOK(){
     this.setData({
