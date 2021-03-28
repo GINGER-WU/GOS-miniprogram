@@ -11,6 +11,14 @@ export function getCarfiles(page,phoneNumber){
   })
 }
 
+// export function getCarfiles(page){
+//   return app.request({
+//     url:app.baseURL+"/carfiles/selectcarfiles",
+//     data:{
+//       page
+//     }
+//   })
+// }
 
 export function getCarfilesInfo(carfileID){
   return app.request({

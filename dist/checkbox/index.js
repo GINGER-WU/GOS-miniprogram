@@ -8,6 +8,10 @@ Component({
         }
     },
     properties: {
+        partsID: {
+            type: Number,
+            value: 0
+        },
         value: {
             type: String,
             value: ''
@@ -43,7 +47,7 @@ Component({
         },
         checkboxChange() {
             if (this.data.disabled) return;
-            const item = { current: !this.data.checked, value: this.data.value };
+            const item = { current: !this.data.checked, value: this.data.value , partsID: this.data.partsID};
             const parent = this.getRelationNodes('../checkbox-group/index')[0];
             parent ? parent.emitEvent(item) : this.triggerEvent('change', item);
         },

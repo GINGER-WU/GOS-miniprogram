@@ -1,0 +1,29 @@
+{
+  "name": "gos4clients",
+  "version": "1.0.0",
+  "description": "a gos for clients",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GINGER-WU/GOS-miniprogram.git"
+  },
+  "keywords": [
+    "mini",
+    "program"
+  ],
+  "author": "ginger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GINGER-WU/GOS-miniprogram/issues"
+  },
+  "homepage": "https://github.com/GINGER-WU/GOS-miniprogram#readme",
+  "dependencies": {
+    "vant-weapp": "^0.5.29"
+  }
+}

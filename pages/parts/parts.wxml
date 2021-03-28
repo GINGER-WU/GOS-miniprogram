@@ -1,2 +1,55 @@
-<!--pages/parts/parts.wxml-->
-<text>pages/parts/parts.wxml</text>
+
+  <van-search value="{{ value }}" placeholder="请输入搜索关键词" />
+<i-row>
+  <i-col span="24" i-class="col-class">
+    <view class="table">
+      <view class="tr bg-w">
+        <view class="th">配件编号</view>
+        <view class="th">配件名称</view>
+        <view class="th">配件单价</view>
+        <view class="th ">操作</view>
+      </view>
+      <block wx:for="{{partsList}}" wx:key="partsID">
+        <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+          <view class="td">{{item.partsID}}</view>
+          <view class="td">{{item.partsName}}</view>
+          <view class="td">{{item.partsPrice}}</view>
+          <view class="td">
+            <button plain="true" bindtap="handleClick" data-ID="{{item.partsID}}" type="primary"
+              size="mini">详情</button>
+          </view>
+        </view>
+        <view class="tr" wx:else>
+          <view class="td">{{item.partsID}}</view>
+          <view class="td">{{item.partsName}}</view>
+          <view class="td">{{item.partsPrice}}</view>
+          <view class="td">
+            <button plain="true" bindtap="handleClick" data-ID="{{item.partsID}}" type="primary"
+              size="mini">详情</button>
+          </view>
+        </view>
+      </block>
+    </view>
+    <i-modal style="height: 100%;position: relative;" title="配件编号：{{partsInfo.partsID}}" show-cancel="{{false}}" visible="{{ isshow }}"
+      bind:ok="handleOK">
+      <view style="border:1px solid black;width: 70%;margin:0 auto" >
+        <text class="strongText" style="font-size: 20px;">{{partsInfo.partsName}}</text>
+        <text>\n</text>
+        <text>\n</text>
+        <text class="strongText">配件售价：</text><text style="padding-right: 10px;">{{partsInfo.partsPrice}}</text>
+        <text class="strongText">配件数量：</text><text>{{partsInfo.partsNumber}}</text>
+        <text>\n</text>
+        <text>\n</text>
+      </view>
+      <view style="position: absolute;bottom: 20%;right: 5px;width: 50%;">
+        <text class="strongText" style="font-size: 15px;">数量：</text><i-input-number style="display: inline-block;" value="{{ value1 }}" min="0" max="100" bindchange="handleChange1" />
+      </view>
+    </i-modal>
+  </i-col>
+  <view class="page" >
+    <i-page current="{{ current }}" mode="pointer" total="{{total}}" bind:change="handleChange">
+      <view slot="prev"><i-icon type="return" /></view>
+      <view slot="next"><i-icon type="enter" /></view>
+    </i-page>  
+  </view>
+</i-row>

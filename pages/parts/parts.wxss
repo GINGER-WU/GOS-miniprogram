@@ -1,1 +1,47 @@
-/* pages/parts/parts.wxss */
+.table {
+  border: 0px solid darkgray;
+ }
+ .tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
+ }
+ .td {
+  width:50%;
+  justify-content: center;
+  text-align: center;
+ }
+ .bg-w{
+  background: snow;
+ }
+ .bg-g{
+  background: #E6F3F9;
+ }
+ .th {
+  width: 50%;
+  justify-content: center;
+  background: #12afa2;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+ }
+ .line{
+   width: 100%;
+   border-top:1px #989898 solid;
+   }
+ .strongText{
+   font-weight: 600;
+   color: #000;
+ }
+ .page{
+   position: absolute;
+   margin:auto;
+   bottom: 2%;
+   left: 0%;
+   right: 0%;
+   width: 80%;
+   height: 4rem;
+ }

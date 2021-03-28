@@ -171,7 +171,7 @@
     </i-modal>
   </i-col>
   <view class="page" >
-    <i-page current="{{ current }}" total="{{total}}" bind:change="handleChange">
+    <i-page current="{{ current }}" mode="pointer" total="{{total}}" bind:change="handleChange">
       <view slot="prev"><i-icon type="return" /></view>
       <view slot="next"><i-icon type="enter" /></view>
     </i-page>  

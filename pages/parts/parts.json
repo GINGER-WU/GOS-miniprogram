@@ -1,3 +1,14 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "i-checkbox-group": "../../dist/checkbox-group/index",
+    "i-checkbox": "../../dist/checkbox/index",
+    "i-input-number": "../../dist/input-number/index",
+    "i-row": "../../dist/row/index",
+    "i-col": "../../dist/col/index",
+    "i-button": "../../dist/button/index",
+    "i-modal": "../../dist/modal/index",
+    "i-page": "../../dist/page/index",
+    "i-icon": "../../dist/icon/index",
+    "van-search": "../../miniprogram_npm/vant-weapp/button/index"
+  }
 }
